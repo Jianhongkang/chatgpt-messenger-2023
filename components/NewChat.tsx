@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation"; //Be careful the router path
 import {db} from "../firebase";
 
 
+
 function NewChat() {
   const router = useRouter()
   const {data:session} = useSession();
