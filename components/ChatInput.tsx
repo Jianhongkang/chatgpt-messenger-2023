@@ -1,10 +1,9 @@
 'use client'
 
-import { db } from '@/firebase';
+import { db } from '../firebase';
 import { PaperAirplaneIcon } from '@heroicons/react/24/outline';
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { Timestamp, addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { useSession } from 'next-auth/react';
-
 import React, { FormEvent, useState } from 'react'
 import toast from 'react-hot-toast';
 
@@ -29,13 +28,17 @@ function ChatInput({chatId}:Props) {
         e.preventDefault()
         if(!propmt) return;
 
+        // Toast notification to say loading
+        const notify = toast.loading('ChatGPT is thinking...');
+
         const input =propmt.trim();
         setPrompt("");
         
        
         const message: Message = {
             text: input,
-            createdAt: serverTimestamp(),
+           // createdAt: serverTimestamp(),
+           createdAt: Timestamp.now(),
             user: {
                 _id: session?.user?.email!,
                 name: session?.user?.name!,
@@ -47,28 +50,33 @@ function ChatInput({chatId}:Props) {
             message
             )
 
-         // Toast notification to say loading
-         const notify = toast.loading('ChatGPT is thinking...');
-
-
-        await fetch('/api/ask-question',{
-            method:'POST',
-            headers:{
-                'Content-Type':'application/json'
+       // ASK QUESTION TO OPENAI
+       await fetch('/api/ask-question', {
+            method: 'POST',
+            headers: {
+                "Content-Type": 'application/json'
             },
-            body:JSON.stringify({
-                text:input,
+            body: JSON.stringify({
+                text: input,
                 chatId,
                 model,
-                session
+                session,
+                timestamp: Timestamp.now()
             })
-        }).then(()=>{
-            // Toast notification to say successful
-            toast.success('ChatGPT has responded!',{
-                id:notify,
+        }).then(() => {
+            // TOAST NOTIFICATION TO SAY SUCCESS
+            toast.success('ChatGPT has responded!', {
+                id: notify
             })
-        });
+        }).catch((err) => {
+            toast.error(`Backend (Error: ${err.message})`, {
+                id: notify
+            })
+        })
     }
+
+
+   
 
   return (
     <div className='bg-gray-700/50 text-gray-400 rounded-lg text-sm'>

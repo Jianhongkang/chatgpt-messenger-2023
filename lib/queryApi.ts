@@ -1,9 +1,12 @@
-import openai from '../lib/chatgpt'
+
+
+import openai from './chatgpt'
 
 const query= async (
   text:string,
   chatId: string,
   model:string) =>{
+
     const res = openai.createCompletion({
         model,
         prompt:text,
@@ -13,15 +16,12 @@ const query= async (
         frequency_penalty: 0.5, // 0 0.5
         presence_penalty: 0
     })
-        .then((res) => {
-            // console.log(res.data.choices)
-            // console.log(res.data.choices.length)
-            return res.data.choices[0].text
+        .then(res => { res.data.choices[0].text
         })
-        // .then((res) => res.data.choices)
-        .catch((err) => {
-            console.log(err)
-            return `ChatGPT was unable to find an answer for that! (${err})`
+        .catch(
+            (err) => {
+           `ChatGPT was unable to answer! 
+           (Error:${err})`
         })
 
     return res
