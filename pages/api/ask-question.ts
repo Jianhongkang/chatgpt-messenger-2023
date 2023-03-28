@@ -26,10 +26,13 @@ export default async function handler(
       // console.log(req.body)
 
       // ChatGPT Query
-      const response = await query(text, chatId, model)
+      
 
+      const response = await query(text,chatId,model)
+      // console.log(response);
+          
       const message: Message = {
-          text: response?.toString() || "ChatGPT was unable to find an answer for that!",
+          text: response|| "ChatGPT was unable to find an answer for that!",
           createdAt: admin.firestore.Timestamp.now().seconds < timestamp.seconds ? timestamp : admin.firestore.Timestamp.now(),
           // createdAt: firestore.Timestamp.now(),
           user: {
@@ -38,8 +41,6 @@ export default async function handler(
               avatar: 'https://links.papareact.com/89k',
           }
       }
-
-      
 
       await adminDb
           .collection('users').doc(session.user.email)
