@@ -6,7 +6,8 @@ import { Timestamp, addDoc, collection, serverTimestamp } from 'firebase/firesto
 import { useSession } from 'next-auth/react';
 import React, { FormEvent, useState } from 'react'
 import toast from 'react-hot-toast';
-
+import ModelSelection from './ModelSelection';
+import useSWR from 'swr'
 
 type Props = {
     chatId:string;
@@ -17,12 +18,10 @@ function ChatInput({chatId}:Props) {
     const {data:session} = useSession();
 
     // TODO: useSWR to get model
-    const model = 'text-davinci-003'
-    // text-moderation-playground
-    // text-davinci-002-render-sha
-    // const { data: model } = useSWR('selectedModel', {
-    //     fallbackData: 'text-davinci-003'
-    // })
+    //const model = 'text-davinci-003'
+    const { data: model } = useSWR('Model', {
+        fallbackData: 'text-davinci-003'
+    })
 
     const sendMessage = async (e:FormEvent<HTMLFormElement>)=>{
         e.preventDefault()
@@ -97,10 +96,15 @@ function ChatInput({chatId}:Props) {
          disabled:cursor-not-allowed'>
         <PaperAirplaneIcon className='h-4 w-4 -rotate-45'></PaperAirplaneIcon>
          </button>
-
        </form> 
+       
+       <div className='md:hidden'>
+            <ModelSelection/>
+         </div>
     </div>
   )
 }
 
 export default ChatInput
+
+

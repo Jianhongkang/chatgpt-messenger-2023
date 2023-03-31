@@ -1,3 +1,4 @@
+
 import SideBar from '@/components/SideBar'
 import LoginPage from '@/components/LoginPage'
 import './../styles/globals.css'
@@ -5,6 +6,7 @@ import './../styles/globals.css'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '../pages/api/auth/[...nextauth]'
 import ClientProvider from '@/providers/ClientProvider'
+import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'
 
 
 export default async function RootLayout({children,}:{
@@ -13,13 +15,16 @@ export default async function RootLayout({children,}:{
   const session = await getServerSession(authOptions);
   //console.log(session);
   
+
   return (
-    <html >
-      <body>
+  <html  suppressHydrationWarning>
+    <body>
+    
       <SessionProvider session={session}>
           {!session ? (
             <LoginPage />
           ) : (
+          
             <div className='flex'>
               {/* Sidebar */}
               <div className='bg-[#202123] max-w-xs h-screen overflow-auto md:min-w-[16.5rem] '>
@@ -27,12 +32,19 @@ export default async function RootLayout({children,}:{
               </div>
 
              <ClientProvider/>
-              <div className='bg-[#343541] flex-1'> {children}</div>
+             
+
+              <div className='bg-[#343541] flex-1'> 
+            
+                 {children}
+              </div>
             </div>
+      
           )}
         </SessionProvider>
+      
      
-        </body>
-    </html>
+      </body>
+  </html>
   )
 }

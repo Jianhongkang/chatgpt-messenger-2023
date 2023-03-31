@@ -1,5 +1,6 @@
 //Mark the component using createContext as a Client Component by adding 'use client' at the top of the file.
 // 'use client'
+'use client'
 
 import { PlusIcon } from "@heroicons/react/24/solid"
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
