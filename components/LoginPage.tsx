@@ -18,19 +18,26 @@ export default function LoginPage() {
                 alt='chatgpt-logo'
             />
             <button 
-             className='text-white font-semibold text-3xl animate-pulse'
+             className=' font-semibold text-base flex max-w-[500px] items-center 
+             justify-start px-5 py-3 space-x-2  rounded-lg bg-white mb-4
+             hover:bg-gray-700/30 cursor-pointer transition-all duration-200 ease-out'
              onClick={(e) => {
                 e.preventDefault()
                 signIn('google')}}
-                >Sign In with Google to use ChatGPT
+                >
+                <img  src='https://authjs.dev/img/providers/google.svg'></img>
+                <p>Sign In with Google</p>    
              </button>
 
              <button 
-             className='text-white font-semibold text-3xl animate-pulse'
+             className=' font-semibold text-base flex max-w-[500px] items-center 
+             justify-start px-5 py-3 space-x-2  rounded-lg bg-white
+             hover:bg-gray-700/30 cursor-pointer transition-all duration-200 ease-out'
              onClick={(e) =>{
                 e.preventDefault()
                 signIn('github')}} >
-                Sign In with github to use ChatGPT
+                <img  src='https://authjs.dev/img/providers/github.svg'></img>
+                <p>Sign In with Github </p>
              </button>
 
             </div>

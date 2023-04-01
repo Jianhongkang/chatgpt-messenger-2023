@@ -47,7 +47,7 @@ export default async function handler(
           .collection('chats').doc(chatId)
           .collection('messages').add(message)
 
-      // admin.app().delete()
+
       return res.status(200).json({ answer: message.text })
   } catch (error: any) {
       console.log(error)

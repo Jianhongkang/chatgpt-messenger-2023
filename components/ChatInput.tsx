@@ -78,7 +78,8 @@ function ChatInput({chatId}:Props) {
    
 
   return (
-    <div className='bg-gray-700/50 text-gray-400 rounded-lg text-sm'>
+    <div className='bg-white text-gray-800 dark:bg-gray-700/50 dark:text-gray-400 rounded-lg text-base
+    border-2 border-gray-300 dark:border-transparent dark:border-none'>
        <form onSubmit={sendMessage}  className='p-5 space-x-5 flex'>
          <input 
          className='bg-transparent focus:outline-none flex-1
@@ -87,7 +88,7 @@ function ChatInput({chatId}:Props) {
          value={propmt}
          onChange={(e)=> setPrompt(e.target.value)}
          
-         type='text' placeholder='please type your question here...'/>
+         type='text' placeholder='Type a new prompt...'/>
          <button 
          disabled={!propmt || !session}
          type='submit'

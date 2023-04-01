@@ -3,7 +3,9 @@ import { BoltIcon, ExclamationTriangleIcon, SunIcon } from '@heroicons/react/24/
 
 export default function Home() {
   return (
-      <div className='flex flex-col text-white items-center justify-center h-screen px-2 '>
+      <div className='flex flex-col items-center justify-center h-screen px-2 
+       bg-white text-gray-800 dark:bg-gray-800 dark:text-white '>
+        
        <h1 className="text-5xl font-bold mb-20">ChatGPT</h1>
 
        <div className='flex space-x-2 text-center' >
@@ -43,8 +45,8 @@ export default function Home() {
 
           <div className='space-y-2'>
             <p className='infoText'>"May occasionally generate incorrect information"</p>
-            <p className='infoText'>"May occasionally produce harmful instructions or biased content"</p>
-            <p className='infoText'>"Limited knowledge of world and events after 2021"</p>
+            <p className='infoText'>"May occasionally produce  biased content"</p>
+            <p className='infoText'>"Limited knowledge of world and  after 2021"</p>
           </div>
 
           

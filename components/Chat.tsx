@@ -34,11 +34,12 @@ function Chat({chatId}:Props) {
     <div className='flex-1 overflow-y-auto overflow-x-hidden'>
       {messages?.empty &&(
         <div>
-        <p className='mt-10 text-center text-white'>
+        <p className='mt-10 text-center text-gray-800 dark:text-white'>
         Type a prompt in below to get started!
         </p>
-        <ArrowDownCircleIcon className="h-10 w-10 mx-auto mt-5 text-white animate-bounce " />
+        <ArrowDownCircleIcon className="h-10 w-10 mx-auto mt-5 text-gray-800 dark:text-white animate-bounce " />
         </div>
+
       )}
 
 

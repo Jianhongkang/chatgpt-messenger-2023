@@ -10,7 +10,8 @@ import ChatRow from "./ChatRow";
 import NewChat from "./NewChat";
 import ModelSelection from "./ModelSelection";
 import { MoonIcon, SunIcon, TrashIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import { useState,useContext } from "react";
+import { ThemeContext } from '../providers/ThemeProvider';
 
 
 type Props = {};
@@ -41,13 +42,7 @@ const SideBar: React.FC<Props> = ({ }) => {
 };
 
 
-const [isDarkMode, setIsDarkMode] = useState(true)
-
-const toggleTheme = () => {
-  setIsDarkMode(!isDarkMode)
-  document.documentElement.classList.toggle('dark')
-}
-
+const { theme, setTheme } = useContext(ThemeContext)
 
   return (
     <div className="p-2 flex flex-col h-screen">
@@ -81,12 +76,19 @@ const toggleTheme = () => {
 
       {/* Theme Mode Part */}
      
-      {/* //TODO: Fix the theme mode(default is dark mode) */}
-      
-      <div className="chatrow" onClick={toggleTheme}>
-        {isDarkMode ? <MoonIcon className='h-5 w-5' /> : <SunIcon className='h-5 w-5' />}
-        <p className='flex-1'>{isDarkMode ? 'Dark Mode' : 'Light Mode'}</p>
-      </div> 
+      {/* //TODO:  theme mode(default is dark mode) */}
+      {theme === 'dark' ?
+        <div className="chatrow" onClick={() => setTheme('light')}>
+            <SunIcon className='h-5 w-5' />
+            <p className='flex-1'>Light Mode</p>
+        </div>
+        :
+        <div className='chatrow' onClick={() => setTheme('dark')}>
+            <MoonIcon className='h-5 w-5' />
+            <p className='flex-1'>Dark Mode</p>
+        </div>
+      }
+ 
     
      {/* Logout part */}
       <div onClick={(e) => { e.preventDefault(); signOut();} }

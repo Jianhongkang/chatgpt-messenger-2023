@@ -6,25 +6,29 @@ import './../styles/globals.css'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '../pages/api/auth/[...nextauth]'
 import ClientProvider from '@/providers/ClientProvider'
-import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'
+import dynamic from 'next/dynamic';
 
-
-export default async function RootLayout({children,}:{
+const DynamicContextProvider = dynamic(() => import('../providers/ThemeProvider'), {
+  ssr: false
+});
+export default async function RootLayout({children}:{
   children:React.ReactNode;
 }) {
   const session = await getServerSession(authOptions);
   //console.log(session);
   
+ 
 
   return (
-  <html  suppressHydrationWarning>
+  <html >
+    <head/>
     <body>
     
       <SessionProvider session={session}>
           {!session ? (
             <LoginPage />
           ) : (
-          
+          <DynamicContextProvider>
             <div className='flex'>
               {/* Sidebar */}
               <div className='bg-[#202123] max-w-xs h-screen overflow-auto md:min-w-[16.5rem] '>
@@ -32,14 +36,14 @@ export default async function RootLayout({children,}:{
               </div>
 
              <ClientProvider/>
-             
 
-              <div className='bg-[#343541] flex-1'> 
+            {/* <div className='bg-[#343541] flex-1'>  */}
+          <div className='bg-white dark:bg-[#343541] flex-1 duration-300'>
+              {children}
+          </div>
             
-                 {children}
-              </div>
             </div>
-      
+          </DynamicContextProvider>
           )}
         </SessionProvider>
       
