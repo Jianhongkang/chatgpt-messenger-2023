@@ -32,7 +32,7 @@ function ChatRow({id}:Props) {
           id,
           "messages"
         ),
-        orderBy("createdAt", "desc")
+        orderBy("createdAt", "asc")
       )
   );
 
