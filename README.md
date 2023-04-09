@@ -35,7 +35,7 @@
   * [Run Locally](#running-run-locally)
   * [Deployment](#triangular_flag_on_post-deployment)
 - [Note](#handshake-note)
-  * my openai api free trial is ended on 2023/04/01,If you wish to use the full functionality of ChatGPT on my website, you    will need to fork my code and then obtain your own OpenAI API key
+  * my openai api free trial is ended on 2023/04/01,If you wish to use the full functionality of ChatGPT on my website, you will need to fork my code and then obtain your own OpenAI API key
 
 <!-- About the Project -->
 ## :star2: About the Project
@@ -231,11 +231,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## :handshake: Note
 
-when you enter my websit for test, you will find the chatgpt answer is as below:
+When you visit my website and test the ChatGPT feature, you may notice that it is not functioning properly
 
 ![image](https://user-images.githubusercontent.com/110987982/230755050-545c0ffb-3989-4d79-823c-457a9dfce983.png)
 
-<h3>because of my openai api free trial is ended on 2023/04/01:</h3>
+<h3>This is because my OpenAI API free trial ended on April 1st, 2023.</h3>
 
 ![image](https://user-images.githubusercontent.com/110987982/230755078-a523f3d4-bdd2-4b07-8500-4a1ec96583e7.png)
 
