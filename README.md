@@ -82,7 +82,6 @@
 </details>
 <br />
 
-
 ## :toolbox: Getting Started
 
 ### :bangbang: Prerequisites
@@ -95,13 +94,21 @@
 ### :key: Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
+
 `GOOGLE_ID`
+
 `GOOGLE_SECRET`
+
 `GITHUB_ID`
+
 `GITHUB_SECRET`
+
 `NEXTAUTH_URL`
+
 `NEXTAUTH_SECRET`
+
 `OPENAI_API_KEY`
+
 `FIREBASE_SERVICE_ACCOUNT_KEY`
 
 
