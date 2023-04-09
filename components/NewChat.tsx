@@ -3,7 +3,7 @@
 'use client'
 
 import { PlusIcon } from "@heroicons/react/24/solid"
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import {  addDoc, collection,  serverTimestamp } from "firebase/firestore";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation"; //Be careful the router path
 import {db} from "../firebase";
@@ -22,9 +22,12 @@ function NewChat() {
 
       }
     );
+
     router.push(`/chat/${doc.id}`)
+  
   }
 
+  
 
 
   return (
