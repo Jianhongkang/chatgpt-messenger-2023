@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="image.png" alt="logo" width="400" height="auto" />
+  <img src="https://links.papareact.com/2i6" width="400" height="auto" />
   
   <h1>ChatGPT Clone with React.JS</h1>
   
@@ -10,7 +10,7 @@
   
    
 <h4>
-      <a href="https://spotify-clone-ten-psi.vercel.app">View Demo</a>
+      <a href="">View Demo</a>
   <span> · </span>
     <a href="https://github.com/Jianhongkang/chatgpt-messenger-2023/blob/main/README.md">Documentation</a>
   <span> · </span>
@@ -44,19 +44,19 @@
 ### :camera: Screenshots
 
 
-<div align="center">
-1.login in
-<img  src='image.png' alt='image'/>
-2.main page
-<img src='image.png'/>
-3.new chat
-<img src='image.png'/>
-4.light mode
-<img src='image.png'/>
+<div >
+<p ># login in </p>
+<img  src='https://user-images.githubusercontent.com/110987982/230751376-e25f385a-6eeb-4eec-bfa5-e8d651e6d6b5.png' alt='image' />
+<p ># main page </p>
+<img src='https://user-images.githubusercontent.com/110987982/230751660-b686e6ea-926a-496e-a6c7-52908297fbba.png'/>
+<p ># new chat </p>
+<img src='https://user-images.githubusercontent.com/110987982/230751751-33f8afcf-0e77-439e-89f3-93ddf1204d3c.png'/>
+<p ># query </p>
+<img src='https://user-images.githubusercontent.com/110987982/230752058-664c6445-3e8b-4b7f-88c7-ba6867d7356d.png'/>
 </div>
 
 
-## <a href="https://spotify-clone-ten-psi.vercel.app" target="_blank">LIVE DEMO 💥</a>
+## <a href="">LIVE DEMO 💥</a>
 
 ![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)
 ![forthebadge](https://forthebadge.com/images/badges/for-you.svg)
