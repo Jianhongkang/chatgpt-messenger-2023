@@ -34,7 +34,8 @@
   * [Installation](#gear-installation)
   * [Run Locally](#running-run-locally)
   * [Deployment](#triangular_flag_on_post-deployment)
-- [Contact](#handshake-contact)
+- [Note](#handshake-note)
+  * my openai api free trial is ended on 2023/04/01,If you wish to use the full functionality of ChatGPT on my website, you    will need to fork my code and then obtain your own OpenAI API key
 
 <!-- About the Project -->
 ## :star2: About the Project
@@ -227,3 +228,15 @@ To deploy this project run
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## :handshake: Note
+
+when you enter my websit for test, you will find the chatgpt answer is as below:
+
+![image](https://user-images.githubusercontent.com/110987982/230755050-545c0ffb-3989-4d79-823c-457a9dfce983.png)
+
+<h3>because of my openai api free trial is ended on 2023/04/01:</h3>
+
+![image](https://user-images.githubusercontent.com/110987982/230755078-a523f3d4-bdd2-4b07-8500-4a1ec96583e7.png)
+
+If you wish to use the full functionality of ChatGPT on your website, you will need to obtain your own OpenAI API key. Please note that the use of the OpenAI API may require payment, depending on the plan and usage limits that you choose. You can sign up for an API key and learn more about pricing and usage limits on the OpenAI website.
